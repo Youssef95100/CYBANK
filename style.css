@@ -1,0 +1,56 @@
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #2c3e50;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #34495e;
+    color: #42b983;
+}
+
+
+.zone-recherche {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.zone-recherche input[type="search"] {
+    padding: 10px 15px;
+    width: 300px;
+    border: 2px solid #2c3e50;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.zone-recherche button {
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: 2px solid #2c3e50;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.zone-recherche button:hover {
+    background-color: #34495e;
+}
+
+
+
+
