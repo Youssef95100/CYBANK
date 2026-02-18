@@ -53,4 +53,54 @@ nav a:hover {
 
 
 
+.conteneur-formulaire {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+}
 
+.groupe-champ {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.groupe-champ label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.groupe-champ input, 
+.groupe-champ textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.groupe-champ input:focus, 
+.groupe-champ textarea:focus {
+    border-color: #2c3e50;
+    outline: none;
+}
+
+.btn-valider {
+    width: 100%;
+    padding: 15px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-valider:hover {
+    background-color: #34495e;
+}
