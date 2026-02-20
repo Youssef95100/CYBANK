@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nom du restaurant</title>
+    <title>Notes - La Pizzeria</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,6 +22,49 @@
             <li><a href="notation.html">Notes</a></li>
         </ul>
     </nav>
+
+<!-- Ajouter le fait qu'on puisse envoyer un avis seulement si on est connecté a un compte-->
+
+
+    <main class="conteneur-formulaire">
+        <h1>Évaluer votre commande</h1>
+        <p>Votre avis compte ! Aidez-nous à améliorer notre savoir-faire.</p>
+
+        <form action="#" method="POST">
+
+            <div class="groupe-champ">
+                <label for="note-livraison">Note de la livraison (sur 5) :</label>
+                <select id="note-livraison" name="note-livraison" required>
+                    <option value="">Sélectionnez une note</option>
+                    <option value="5">5 - Excellente</option>
+                    <option value="4">4 - Bonne</option>
+                    <option value="3">3 - Moyenne</option>
+                    <option value="2">2 - Mauvaise</option>
+                    <option value="1">1 - Très mauvaise</option>
+                </select>
+            </div>
+
+            <div class="groupe-champ">
+                <label for="note-qualite">Note de la qualité des plats (sur 5) :</label>
+                <select id="note-qualite" name="note-qualite" required>
+                    <option value="">Sélectionnez une note</option>
+                    <option value="5">5 - Délicieux</option>
+                    <option value="4">4 - Très bon</option>
+                    <option value="3">3 - Correct</option>
+                    <option value="2">2 - Décevant</option>
+                    <option value="1">1 - Immangeable</option>
+                </select>
+            </div>
+
+            <div class="groupe-champ">
+                <label for="commentaire">Un commentaire ? (Optionnel) :</label>
+                <textarea id="commentaire" name="commentaire" rows="4" placeholder="Dites-nous ce que vous avez pensé de votre repas..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-valider">Envoyer mon avis</button>
+        </form>
+    </main>
+
 </body>
 
 </html>

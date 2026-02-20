@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nom du restaurant</title>
+    <title>Notre Carte - La Pizzeria</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,6 +22,127 @@
             <li><a href="notation.html">Notes</a></li>
         </ul>
     </nav>
+
+    <main class="conteneur-menu">
+        <h1>Découvrez nos Pizzas</h1>
+
+        <section class="barre-outils">
+            <div class="recherche-rapide">
+                <input type="search" placeholder="Rechercher une pizza...">
+                <button type="button">Rechercher</button>
+            </div>
+            
+            <div class="filtres">
+                <select name="base">
+                    <option value="">Toutes les bases</option>
+                    <option value="tomate">Base Tomate</option>
+                    <option value="creme">Base Crème</option>
+                </select>
+
+                <select name="viande">
+                    <option value="">Toutes les viandes</option>
+                    <option value="poulet">Poulet</option>
+                    <option value="porc">Lardons / Jambon</option>
+                    <option value="boeuf">Boeuf / Merguez</option>
+                    <option value="vegetarien">Végétarien</option>
+                </select>
+
+                <select name="allergenes">
+                    <option value="">Allergènes</option>
+                    <option value="sans-gluten">Sans gluten</option>
+                    <option value="sans-lactose">Sans lactose</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="grille-produits">
+            
+            <article class="carte-pizza">
+                <h3>Margherita</h3>
+                <p class="ingredients">Sauce tomate, mozzarella, basilic frais.</p>
+                <div class="pied-carte">
+                    <span class="prix">10.00 €</span>
+                    <button class="btn-ajouter">Ajouter</button>
+                </div>
+            </article>
+
+            <article class="carte-pizza">
+                <h3>Boursin</h3>
+                <p class="ingredients">Fromage boursin, mozzarella, morceau de poulet, pomme de terre, oignons, origan.</p>
+                <div class="pied-carte">
+                    <span class="prix">14.00 €</span>
+                    <button class="btn-ajouter">Ajouter</button>
+                </div>
+            </article>
+
+            <article class="carte-pizza">
+                <h3>Hawaienne</h3>
+                <p class="ingredients">Crème fraîche, mozzarella, jambon, ananas.</p>
+                <div class="pied-carte">
+                    <span class="prix">14.50 €</span>
+                    <button class="btn-ajouter">Ajouter</button>
+                </div>
+            </article>
+
+            <article class="carte-pizza">
+                <h3>Chèvre Miel</h3>
+                <p class="ingredients">Crème fraîche, poulet fumé, mozzarella, fromage de chèvre, miel.</p>
+                <div class="pied-carte">
+                    <span class="prix">15.00 €</span>
+                    <button class="btn-ajouter">Ajouter</button>
+                </div>
+            </article>
+
+            <article class="carte-pizza">
+                <h3>L'Orientale</h3>
+                <p class="ingredients">Sauce tomate, mozzarella, poivrons, oignons, merguez.</p>
+                <div class="pied-carte">
+                    <span class="prix">13.50 €</span>
+                    <button class="btn-ajouter">Ajouter</button>
+                </div>
+            </article>
+
+            <article class="carte-pizza">
+                <h3>Savoyarde</h3>
+                <p class="ingredients">Crème fraîche, mozzarella, pommes de terre, lardons, reblochon.</p>
+                <div class="pied-carte">
+                    <span class="prix">14.50 €</span>
+                    <button class="btn-ajouter">Ajouter</button>
+                </div>
+            </article>
+
+            <article class="carte-pizza">
+                <h3>L'Extravagante</h3>
+                <p class="ingredients">Sauce tomate, mozzarella, poulet fumé, champignons, oignons, poivrons, boeuf, olives noires.</p>
+                <div class="pied-carte">
+                    <span class="prix">16.00 €</span>
+                    <button class="btn-ajouter">Ajouter</button>
+                </div>
+            </article>
+
+            <article class="carte-pizza">
+                <h3>4 Fromages</h3>
+                <p class="ingredients">Sauce tomate, mozzarella, fromage de chèvre, emmental, bleu.</p>
+                <div class="pied-carte">
+                    <span class="prix">14.00 €</span>
+                    <button class="btn-ajouter">Ajouter</button>
+                </div>
+            </article>
+
+            <article class="carte-pizza">
+                <h3>4 Jambons</h3>
+                <p class="ingredients">Sauce tomate, double mozzarella, jambon, bacon, chorizo, lardons.</p>
+                <div class="pied-carte">
+                    <span class="prix">15.50 €</span>
+                    <button class="btn-ajouter">Ajouter</button>
+                </div>
+            </article>
+
+            <!-- ajouter boissons et peut-etre dessert-->
+            
+        </section>
+    </main>
+
 </body>
 
 </html>
