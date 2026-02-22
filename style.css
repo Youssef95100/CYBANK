@@ -248,6 +248,15 @@ nav a:hover {
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
+/* pour que les images soit à la même taille */
+.img-pizza {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+    margin-bottom: 15px; 
+}
+
 .carte-pizza h3 {
     margin-top: 0;
     color: #e74c3c;
@@ -623,3 +632,4 @@ progress {
 .btn-terminer:hover {
     background-color: #2ecc71; 
 }
+
