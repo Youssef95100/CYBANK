@@ -1,3 +1,4 @@
+/* index.html, presentation.html, inscription.html, connexion.html, profil.html, admin.html, commande.html, livraison.html, notation.html */
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -22,6 +23,7 @@ nav a:hover {
 }
 
 
+/* index.html, presentation.html */
 .zone-recherche {
     text-align: center;
     margin: 30px 0;
@@ -52,7 +54,7 @@ nav a:hover {
 }
 
 
-
+/* connexion.html, inscription.html, notation.html */
 .conteneur-formulaire {
     max-width: 500px;
     margin: 40px auto;
@@ -105,7 +107,21 @@ nav a:hover {
     background-color: #34495e;
 }
 
+.lien-inscription {
+    text-align: center;
+    margin-top: 15px;
+}
 
+.lien-inscription a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.lien-inscription a:hover {
+    text-decoration: underline;
+    color: #27ae60;
+}
 
 .groupe-champ input, 
 .groupe-champ textarea,
@@ -125,6 +141,7 @@ nav a:hover {
 }
 
 
+/* index.html, presentation.html */
 .conteneur-menu {
     max-width: 1200px;
     margin: 30px auto;
@@ -182,7 +199,6 @@ nav a:hover {
     gap: 25px; 
 }
 
-
 .carte-pizza {
     background-color: white;
     border-radius: 8px;
@@ -239,9 +255,132 @@ nav a:hover {
     background-color: #2ecc71;
 }
 
+.titre-section {
+    margin-top: 50px;
+}
 
-
+/* index.html */
 .section-accueil {
     margin-top: 50px;
     margin-bottom: 30px;
+}
+
+
+/* profil.html */
+.conteneur-profil {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.conteneur-profil h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.grille-profil {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.carte-profil {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1;
+}
+
+.carte-profil.pleine-largeur {
+    width: 100%;
+}
+
+.carte-profil h2 {
+    color: #27ae60;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.liste-infos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.liste-infos li {
+    padding: 15px 0;
+    border-bottom: 1px solid #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-modifier {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.btn-modifier:hover {
+    background-color: #f1c40f;
+}
+
+.fidelite-info {
+    text-align: center;
+}
+
+.fidelite-info .points {
+    font-size: 48px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 20px 0;
+}
+
+.fidelite-info .points span {
+    font-size: 18px;
+    color: #7f8c8d;
+}
+
+progress {
+    width: 100%;
+    height: 25px;
+    margin-top: 15px;
+}
+
+.table-commandes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.table-commandes th, .table-commandes td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-commandes th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.lien-noter {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lien-noter:hover {
+    background-color: #2980b9;
 }
