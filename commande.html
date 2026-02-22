@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commandes - La Pizzeria</title>
+    <title>Commandes - La Pizzardir</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,6 +22,69 @@
             <li><a href="notation.html">Notes</a></li>
         </ul>
     </nav>
+
+    <main class="conteneur-admin">
+        <h1>Tableau de bord - Cuisines & Livraisons</h1>
+
+        <section class="carte-profil pleine-largeur espace-bas">
+            <h2 class="titre-attente">Commandes en attente (À préparer)</h2>
+            
+            <table class="table-admin">
+                <thead>
+                    <tr>
+                        <th>N° Commande</th>
+                        <th>Heure de commande</th>
+                        <th>Détails de la commande</th>
+                        <th>Statut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#CMD-00125</td>
+                        <td>19h30</td>
+                        <td>1x L'Extravagante, 1x Tiramisu</td>
+                        <td><span class="badge-role attente">À préparer</span></td>
+                        <td><button class="btn-action" disabled>Passer en livraison</button></td>
+                    </tr>
+                    <tr>
+                        <td>#CMD-00126</td>
+                        <td>19h35</td>
+                        <td>2x Margherita, 4x Coca-Cola</td>
+                        <td><span class="badge-role attente">À préparer</span></td>
+                        <td><button class="btn-action" disabled>Passer en livraison</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="carte-profil pleine-largeur">
+            <h2 class="titre-en-cours">Commandes en cours de livraison</h2>
+            
+            <table class="table-admin">
+                <thead>
+                    <tr>
+                        <th>N° Commande</th>
+                        <th>Heure départ</th>
+                        <th>Livreur assigné</th>
+                        <th>Statut</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#CMD-00124</td>
+                        <td>19h15</td>
+                        <td>Novak D.</td>
+                        <td><span class="badge-role livreur">En livraison</span></td>
+                        <td><button class="btn-action" disabled>Marquer comme Livrée</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
 </body>
 
 </html>

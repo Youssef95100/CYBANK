@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - La Pizzeria</title>
+    <title>Administration - La Pizzardiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,6 +22,78 @@
             <li><a href="notation.html">Notes</a></li>
         </ul>
     </nav>
+
+    <main class="conteneur-admin">
+        <h1>Gestion des Utilisateurs</h1>
+
+        <section class="barre-outils">
+            <div class="recherche-rapide">
+                <input type="search" placeholder="Rechercher (nom, email)...">
+                <button type="button">Rechercher</button>
+            </div>
+            
+            <div class="filtres">
+                <select name="filtre-utilisateurs">
+                    <option value="tous">Tous les utilisateurs</option>
+                    <option value="avec-commandes">Avec commandes passées</option>
+                    <option value="sans-commandes">Sans commandes</option>
+                    <option value="staff">Équipe (Livreurs, Restaurateurs)</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="carte-profil pleine-largeur">
+            <h2>Liste des inscrits</h2>
+            
+            <table class="table-admin">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom & Prénom</th>
+                        <th>Email</th>
+                        <th>Rôle</th>
+                        <th>Commandes passées</th>
+                        <th>Action</th> <!-- a completer a la phase 2-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#U001</td>
+                        <td>Jannik Sinner</td>
+                        <td>jannik.sinner@email.com</td>
+                        <td><span class="badge-role client">Client</span></td>
+                        <td>4</td>
+                        <td><a href="profil.html" class="lien-noter">Voir profil</a></td>
+                    </tr>
+                    <tr>
+                        <td>#U002</td>
+                        <td>Carlos Alcaraz</td>
+                        <td>carlos.alcaraz@email.com</td>
+                        <td><span class="badge-role client">Client</span></td>
+                        <td>7</td>
+                        <td><a href="profil.html" class="lien-noter">Voir profil</a></td>
+                    </tr>
+                    <tr>
+                        <td>#U003</td>
+                        <td>Novak Djokovic</td>
+                        <td>novak.djokovic@email.com</td>
+                        <td><span class="badge-role livreur">Livreur</span></td>
+                        <td>N/A</td>
+                        <td><a href="profil.html" class="lien-noter">Voir profil</a></td>
+                    </tr>
+                    <tr>
+                        <td>#U004</td>
+                        <td>Rafael Nadal</td>
+                        <td>nadal@pizzeria.com</td>
+                        <td><span class="badge-role restaurateur">Restaurateur</span></td>
+                        <td>N/A</td>
+                        <td><a href="profil.html" class="lien-noter">Voir profil</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
 </body>
 
 </html>
