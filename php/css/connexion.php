@@ -1,3 +1,7 @@
+<?php
+require_once 'includes/auth.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,24 +13,19 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="inscription.html">Inscription</a></li>
-            <li><a href="connexion.html">Connexion</a></li>
-            <li><a href="profil.html">Profil</a></li>
-            <li><a href="admin.html">Administrateur</a></li>
-            <li><a href="commande.html">Commandes</a></li>
-            <li><a href="livraison.html">Livraison</a></li>
-            <li><a href="notation.html">Notes</a></li>
-        </ul>
-    </nav>
-    <main class="conteneur-formulaire">
+    <?php include 'views/nav.php'; ?>
+    
+   <main class="conteneur-formulaire">
         <h1>Connexion</h1>
         <p>Veuillez vous identifier pour accéder à votre compte.</p>
 
-        <form action="#" method="POST">
+        <?php if ($message_erreur != ''): ?>
+            <p class="message-erreur">
+                <?php echo $message_erreur; ?>
+            </p>
+        <?php endif; ?>
+
+        <form action="connexion.php" method="POST">
             <div class="groupe-champ">
                 <label for="email">Adresse e-mail :</label>
                 <input type="email" id="email" name="email" placeholder="votre@email.com" required>
@@ -41,7 +40,7 @@
         </form>
 
         <p class="lien-inscription">
-            <a href="inscription.html">Pas encore de compte ? Inscrivez-vous ici.</a>
+            <a href="inscription.php">Pas encore de compte ? Inscrivez-vous ici.</a>
         </p>
     </main>
 

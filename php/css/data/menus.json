@@ -1,0 +1,22 @@
+{
+    "menus": [
+        {
+            "id": "M01",
+            "nom": "Menu Solo",
+            "description": "1 Pizza + 1 Boisson au choix",
+            "prix_total": 14.00
+        },
+        {
+            "id": "M02",
+            "nom": "Menu Gourmand",
+            "description": "1 Pizza + 1 Boisson + 1 Dessert",
+            "prix_total": 18.00
+        },
+        {
+            "id": "M03",
+            "nom": "Menu Duo",
+            "description": "2 Pizzas + 2 Boissons",
+            "prix_total": 26.00
+        }
+    ]
+}

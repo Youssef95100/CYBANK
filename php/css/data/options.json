@@ -1,0 +1,50 @@
+{
+    "options": {
+        "modifications_ingredients": [
+            {
+                "id": "OPT01",
+                "action": "enlever",
+                "nom": "Sans oignons",
+                "prix_supplement": 0.00
+            },
+            {
+                "id": "OPT02",
+                "action": "enlever",
+                "nom": "Sans champignons",
+                "prix_supplement": 0.00
+            },
+            {
+                "id": "OPT03",
+                "action": "remplacer",
+                "nom": "Base crème fraîche au lieu de tomate",
+                "prix_supplement": 0.00
+            },
+            {
+                "id": "OPT04",
+                "action": "ajouter",
+                "nom": "Supplément Mozzarella",
+                "prix_supplement": 1.50
+            }
+        ],
+        "coupons_reduction": [
+            {
+                "code": "BIENVENUE10",
+                "type_remise": "pourcentage",
+                "valeur": 10,
+                "description": "-10% sur toute la commande"
+            },
+            {
+                "code": "REDUC5",
+                "type_remise": "montant",
+                "valeur": 5.00,
+                "description": "5€ de réduction immédiate"
+            },
+            {
+                "code": "FREELIVRAISON",
+                "type_remise": "frais_port",
+                "valeur": 0,
+                "description": "Frais de livraison offerts"
+            }
+        ]
+    }
+}

@@ -9,19 +9,7 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="inscription.html">Inscription</a></li>
-            <li><a href="connexion.html">Connexion</a></li>
-            <li><a href="profil.html">Profil</a></li>
-            <li><a href="admin.html">Administrateur</a></li>
-            <li><a href="commande.html">Commandes</a></li>
-            <li><a href="livraison.html">Livraison</a></li>
-            <li><a href="notation.html">Notes</a></li>
-        </ul>
-    </nav>
+    <?php include 'views/nav.php'; ?>
 
 <!-- Ajouter le fait qu'on puisse envoyer un avis seulement si on est connecté a un compte-->
 

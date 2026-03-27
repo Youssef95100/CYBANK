@@ -1,0 +1,130 @@
+{
+    "plats": [
+        {
+            "id": "P01",
+            "nom": "Margherita",
+            "ingredients": "Sauce tomate, mozzarella, basilic frais.",
+            "prix": 10.00,
+            "categorie": "Pizza"
+        },
+        {
+            "id": "P02",
+            "nom": "Boursin",
+            "ingredients": "Fromage boursin, mozzarella, morceau de poulet, pomme de terre, oignons, origan.",
+            "prix": 14.00,
+            "categorie": "Pizza"
+        },
+        {
+            "id": "P03",
+            "nom": "Hawaienne",
+            "ingredients": "Crème fraîche, mozzarella, jambon, ananas.",
+            "prix": 14.50,
+            "categorie": "Pizza"
+        },
+        {
+            "id": "P04",
+            "nom": "Chèvre Miel",
+            "ingredients": "Crème fraîche, poulet fumé, mozzarella, fromage de chèvre, miel.",
+            "prix": 15.00,
+            "categorie": "Pizza"
+        },
+        {
+            "id": "P05",
+            "nom": "L'Orientale",
+            "ingredients": "Sauce tomate, mozzarella, poivrons, oignons, merguez.",
+            "prix": 13.50,
+            "categorie": "Pizza"
+        },
+        {
+            "id": "P06",
+            "nom": "Savoyarde",
+            "ingredients": "Crème fraîche, mozzarella, pommes de terre, lardons, reblochon.",
+            "prix": 14.50,
+            "categorie": "Pizza"
+        },
+        {
+            "id": "P07",
+            "nom": "L'Extravagante",
+            "ingredients": "Sauce tomate, mozzarella, poulet fumé, champignons, oignons, poivrons, boeuf, olives noires.",
+            "prix": 16.00,
+            "categorie": "Pizza"
+        },
+        {
+            "id": "P08",
+            "nom": "4 Fromages",
+            "ingredients": "Sauce tomate, mozzarella, fromage de chèvre, emmental, bleu.",
+            "prix": 14.00,
+            "categorie": "Pizza"
+        },
+        {
+            "id": "P09",
+            "nom": "4 Jambons",
+            "ingredients": "Sauce tomate, double mozzarella, jambon, bacon, chorizo, lardons.",
+            "prix": 15.50,
+            "categorie": "Pizza"
+        },
+        {
+            "id": "P10",
+            "nom": "Sirops & Diabolos",
+            "ingredients": "Menthe, Grenadine, Fraise, Pêche, Citron.",
+            "prix": 1.50,
+            "categorie": "Boisson"
+        },
+        {
+            "id": "P11",
+            "nom": "Sodas & Softs",
+            "ingredients": "Coca-Cola, Ice Tea, Orangina, Oasis, Sprite, Fanta.",
+            "prix": 2.00,
+            "categorie": "Boisson"
+        },
+        {
+            "id": "P12",
+            "nom": "Virgin Mojito (Mocktail)",
+            "ingredients": "Citron vert, menthe fraîche, sucre de canne, eau gazeuse.",
+            "prix": 5.00,
+            "categorie": "Boisson"
+        },
+        {
+            "id": "P13",
+            "nom": "Bora Bora (Mocktail)",
+            "ingredients": "Jus d'ananas, jus de fruit de la passion, grenadine, citron.",
+            "prix": 5.50,
+            "categorie": "Boisson"
+        },
+        {
+            "id": "P14",
+            "nom": "Mojito Classique",
+            "ingredients": "Rhum blanc, citron vert, menthe fraîche, sucre de canne, eau gazeuse.",
+            "prix": 6.50,
+            "categorie": "Boisson"
+        },
+        {
+            "id": "P15",
+            "nom": "Spritz Italien",
+            "ingredients": "Aperol, Prosecco, eau gazeuse, rondelle d'orange.",
+            "prix": 6.50,
+            "categorie": "Boisson"
+        },
+        {
+            "id": "P16",
+            "nom": "Tiramisu Maison",
+            "ingredients": "Crème mascarpone, biscuits cuillère, café expresso.",
+            "prix": 5.00,
+            "categorie": "Dessert"
+        },
+        {
+            "id": "P17",
+            "nom": "Panna Cotta",
+            "ingredients": "Crème vanillée et son coulis (Fruits rouges ou Caramel au beurre salé).",
+            "prix": 5.00,
+            "categorie": "Dessert"
+        },
+        {
+            "id": "P18",
+            "nom": "Pizza Nutella",
+            "ingredients": "Pâte à pizza fine, nutella, éclats de noisettes et sucre glace.",
+            "prix": 6.50,
+            "categorie": "Dessert"
+        }
+    ]
+}
