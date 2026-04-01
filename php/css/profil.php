@@ -32,7 +32,7 @@
                         <button class="btn-modifier" title="Modifier cette information">✏️</button>
                     </li>
                     <li>
-                        <span><strong>Adresse :</strong>Avenue du Parc, 95000 Cergy-Pontoise</span>
+                        <span><strong>Adresse :</strong> Avenue du Parc, 95000 Cergy-Pontoise</span>
                         <button class="btn-modifier" title="Modifier cette information">✏️</button>
                     </li>
                 </ul>
@@ -68,14 +68,14 @@
                         <td>CMD-00123</td>
                         <td>32.50 €</td>
                         <td>Livrée</td>
-                        <td><a href="notation.html" class="lien-noter">Noter</a></td> 
+                        <td><a href="notation.php" class="lien-noter">Noter</a></td> 
                     </tr>
                     <tr>
                         <td>02/01/2025</td>
                         <td>CMD-00084</td>
                         <td>18.00 €</td>
                         <td>Livrée</td>
-                        <td><a href="notation.html" class="lien-noter">Noter</a></td>
+                        <td><a href="notation.php" class="lien-noter">Noter</a></td>
                     </tr>
                 </tbody>
             </table>

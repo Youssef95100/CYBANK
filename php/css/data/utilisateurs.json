@@ -6,13 +6,13 @@
             "mot_de_passe": "rafa123",
             "role": "admin",
             "informations": {
-                "nom": "Rafael Nadal",
-                "pseudo": "Adin principal",
+                "nom": "Nadal",
+                "prenom": "Rafael",
                 "adresse": "1 rue de la Paix, 75000 Paris"
             },
             "dates": {
-                "inscription": "01/01/2025",
-                "derniere_connexion": "18/03/2026"
+                "inscription": "01\/01\/2025",
+                "derniere_connexion": "18\/03\/2026"
             }
         },
         {
@@ -21,103 +21,103 @@
             "mot_de_passe": "Roger123",
             "role": "admin",
             "informations": {
-                "nom": "Roger Federer",
-                "pseudo": "Admin secondaire",
+                "nom": "ederer",
+                "pseudo": "Roger",
                 "adresse": "2 rue de la Paix, 75000 Paris"
             },
             "dates": {
-                "inscription": "01/01/2025",
-                "derniere_connexion": "18/03/2026"
+                "inscription": "01\/01\/2025",
+                "derniere_connexion": "18\/03\/2026"
             }
         },
         {
             "id": "U003",
-            "login": "novak.djokovic@email.com",
+            "login": "novak.djokovic@gmail.com",
             "mot_de_passe": "Djoko123",
             "role": "livreur",
             "informations": {
-                "nom": "Novak Djokovic",
+                "nom": "Djokovic",
                 "pseudo": "Novak",
                 "adresse": "QG Livreurs"
             },
             "dates": {
-                "inscription": "11/04/2025",
-                "derniere_connexion": "15/02/2026"
+                "inscription": "11\/04\/2025",
+                "derniere_connexion": "15\/02\/2026"
             }
         },
         {
             "id": "U004",
-            "login": "jannik.sinner@email.com",
+            "login": "jannik.sinner@gmail.com",
             "mot_de_passe": "Sinner123",
             "role": "client",
-            "informations" : {
-                "nom": "Jannik Sinner",
+            "informations": {
+                "nom": "Sinner",
                 "pseudo": "Jannik",
                 "adresse": "Avenue du Parc, 95000 Cergy-Pontoise"
             },
             "dates": {
-                "inscription": "01/08/2025",
-                "derniere_connexion": "14/03/2026"
+                "inscription": "01\/08\/2025",
+                "derniere_connexion": "14\/03\/2026"
             }
         },
         {
             "id": "U005",
-            "login": "carlos.alcaraz@email.com",
+            "login": "carlos.alcaraz@gmail.com",
             "mot_de_passe": "Alcaraz123",
             "role": "client",
             "informations": {
-                "nom": "Carlos Alcaraz",
+                "nom": "Alcaraz",
                 "pseudo": "Carlos",
                 "adresse": "33 Boulevard du Port, 95000 Cergy-Pontoise"
             },
             "dates": {
-                "inscription": "02/02/2025",
-                "derniere_connexion": "16/03/2026"
+                "inscription": "02\/02\/2025",
+                "derniere_connexion": "16\/03\/2026"
             }
         },
         {
             "id": "U006",
-            "login": "serena.williams@email.com",
+            "login": "serena.williams@gmail.com",
             "mot_de_passe": "Serena123",
             "role": "client",
             "informations": {
-                "nom": "Serena Williams",
+                "nom": "Williams",
                 "pseudo": "Serena",
                 "adresse": "5 avenue de la Gare, 95000 Cergy"
             },
             "dates": {
-                "inscription": "10/10/2025",
-                "derniere_connexion": "20/09/2025"
+                "inscription": "10\/10\/2025",
+                "derniere_connexion": "20\/09\/2025"
             }
         },
         {
             "id": "U007",
-            "login": "alex.terieur@email.com",
+            "login": "alex.terieur@gmail.com",
             "mot_de_passe": "Alex123",
             "role": "client",
             "informations": {
-                "nom": "Alex Terieur",
-                "pseudo": "Exterieur",
+                "nom": "Terieur",
+                "pseudo": "Alex",
                 "adresse": "14 rue du mail, 95000 Cergy"
             },
             "dates": {
-                "inscription": "11/11/2025",
-                "derniere_connexion": "11/01/2026"
+                "inscription": "11\/11\/2025",
+                "derniere_connexion": "11\/01\/2026"
             }
         },
         {
             "id": "U008",
-            "login": "alain.terieur@email.com",
+            "login": "alain.terieur@gmail.com",
             "mot_de_passe": "Alain123",
             "role": "client",
             "informations": {
-                "nom": "Alain Terieur",
-                "pseudo": "Interieur",
+                "nom": "Terieur",
+                "pseudo": "Alain",
                 "adresse": "14 rue du mail, 95000 Cergy"
             },
             "dates": {
-                "inscription": "12/11/2025",
-                "derniere_connexion": "11/02/2026"
+                "inscription": "12\/11\/2025",
+                "derniere_connexion": "11\/02\/2026"
             }
         }
     ]

@@ -51,7 +51,7 @@
                         <td>jannik.sinner@email.com</td>
                         <td><span class="badge-role client">Client</span></td>
                         <td>4</td>
-                        <td><a href="profil.html" class="lien-noter">Voir profil</a></td>
+                        <td><a href="profil.php" class="lien-noter">Voir profil</a></td>
                     </tr>
                     <tr>
                         <td>#U002</td>
@@ -59,7 +59,7 @@
                         <td>carlos.alcaraz@email.com</td>
                         <td><span class="badge-role client">Client</span></td>
                         <td>7</td>
-                        <td><a href="profil.html" class="lien-noter">Voir profil</a></td>
+                        <td><a href="profil.php" class="lien-noter">Voir profil</a></td>
                     </tr>
                     <tr>
                         <td>#U003</td>
@@ -67,7 +67,7 @@
                         <td>novak.djokovic@email.com</td>
                         <td><span class="badge-role livreur">Livreur</span></td>
                         <td>N/A</td>
-                        <td><a href="profil.html" class="lien-noter">Voir profil</a></td>
+                        <td><a href="profil.php" class="lien-noter">Voir profil</a></td>
                     </tr>
                     <tr>
                         <td>#U004</td>
@@ -75,7 +75,7 @@
                         <td>rafael.nadal@pizzardiz.com</td>
                         <td><span class="badge-role restaurateur">Restaurateur</span></td>
                         <td>N/A</td>
-                        <td><a href="profil.html" class="lien-noter">Voir profil</a></td>
+                        <td><a href="profil.php" class="lien-noter">Voir profil</a></td>
                     </tr>
                 </tbody>
             </table>
