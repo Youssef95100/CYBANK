@@ -1,3 +1,7 @@
+<?php
+include 'includes/admin_dyn.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -37,46 +41,59 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nom & Prénom</th>
+                        <th>Nom</th>
                         <th>Email</th>
                         <th>Rôle</th>
-                        <th>Commandes passées</th>
-                        <th>Action</th> <!-- a completer a la phase 2-->
+                        <th>Action & Gestion</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>#U001</td>
-                        <td>Jannik Sinner</td>
-                        <td>jannik.sinner@email.com</td>
-                        <td><span class="badge-role client">Client</span></td>
-                        <td>4</td>
-                        <td><a href="profil.php" class="lien-noter">Voir profil</a></td>
-                    </tr>
-                    <tr>
-                        <td>#U002</td>
-                        <td>Carlos Alcaraz</td>
-                        <td>carlos.alcaraz@email.com</td>
-                        <td><span class="badge-role client">Client</span></td>
-                        <td>7</td>
-                        <td><a href="profil.php" class="lien-noter">Voir profil</a></td>
-                    </tr>
-                    <tr>
-                        <td>#U003</td>
-                        <td>Novak Djokovic</td>
-                        <td>novak.djokovic@email.com</td>
-                        <td><span class="badge-role livreur">Livreur</span></td>
-                        <td>N/A</td>
-                        <td><a href="profil.php" class="lien-noter">Voir profil</a></td>
-                    </tr>
-                    <tr>
-                        <td>#U004</td>
-                        <td>Rafael Nadal</td>
-                        <td>rafael.nadal@pizzardiz.com</td>
-                        <td><span class="badge-role restaurateur">Restaurateur</span></td>
-                        <td>N/A</td>
-                        <td><a href="profil.php" class="lien-noter">Voir profil</a></td>
-                    </tr>
+                <?php if (empty($liste_utilisateurs)): ?>
+                        <tr>
+                            <td colspan="5" class="cellule-vide">Aucun utilisateur trouvé.</td>
+                        </tr>
+                    <?php else: ?>
+                        <?php foreach ($liste_utilisateurs as $user): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($user['id']); ?></td>
+                                <td>
+                                    <?php 
+                                        $prenom = $user['informations']['prenom'] ?? '';
+                                        $nom = $user['informations']['nom'] ?? '';
+                                        echo htmlspecialchars(trim($prenom . ' ' . $nom)); 
+                                    ?>
+                                </td>
+                                <td><?php echo htmlspecialchars($user['login']); ?></td>
+                                <td>
+                                    <span class="badge-role <?php echo htmlspecialchars($user['role']); ?>">
+ Í                                       <?php echo ucfirst(htmlspecialchars($user['role'])); ?>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="groupe-actions-admin">
+                                        <a href="profil.php?id=<?php echo $user['id']; ?>" class="lien-noter">Profil</a>
+                                        
+                                        <button class="btn-bloquer" title="Bloquer le compte">Bloquer</button>
+                                        
+                                        <select class="select-admin" title="Modifier le statut">
+                                            <option value="standard">Statut : Standard</option>
+                                            <option value="premium">Statut : Premium</option>
+                                            <option value="vip">Statut : VIP</option>
+                                        </select>
+
+                                        <select class="select-admin" title="Niveau de remise">
+                                            <option value="0">Remise : 0%</option>
+                                            <option value="5">Remise : 5%</option>
+                                            <option value="10">Remise : 10%</option>
+                                            <option value="15">Remise : 15%</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+
+                    
                 </tbody>
             </table>
         </section>

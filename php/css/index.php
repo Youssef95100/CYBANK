@@ -1,3 +1,7 @@
+<?php 
+require_once 'includes/presentation_dyn.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,6 +17,10 @@
 
     <main class="conteneur-menu">
         <h1>Bienvenue chez La Pizzardiz !</h1>
+
+        <?php if (isset($message_ajout)): ?>
+            <div class="message-succes"><?php echo $message_ajout; ?></div>
+        <?php endif; ?>
 
         <div class="zone-recherche">
             <form action="#" method="GET">
@@ -30,7 +38,17 @@
                     <p class="ingredients">Sauce tomate, mozzarella, poulet fumé, champignons, oignons, poivrons, boeuf, olives noires.</p>
                     <div class="pied-carte">
                         <span class="prix">16.00 €</span>
-                        <button class="btn-ajouter">Ajouter au panier</button>
+                        
+                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
+                            <form action="accueil.php" method="POST" class="form-ajout-panier">
+                                <input type="hidden" name="action" value="ajouter">
+                                <input type="hidden" name="id_article" value="P07">
+                                <input type="hidden" name="nom_article" value="L'Extravagante">
+                                <input type="hidden" name="prix_article" value="16.00">
+                                <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
+                                <button type="submit" class="btn-ajouter">Ajouter</button>
+                            </form>
+                        <?php endif; ?>
                     </div>
                 </article>
             </div>
@@ -46,7 +64,16 @@
                     <p class="ingredients">Sauce tomate, mozzarella, basilic frais.</p>
                     <div class="pied-carte">
                         <span class="prix">10.00 €</span>
-                        <button class="btn-ajouter">Ajouter au panier</button>
+                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
+                            <form action="accueil.php" method="POST" class="form-ajout-panier">
+                                <input type="hidden" name="action" value="ajouter">
+                                <input type="hidden" name="id_article" value="P01">
+                                <input type="hidden" name="nom_article" value="Margherita">
+                                <input type="hidden" name="prix_article" value="10.00">
+                                <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
+                                <button type="submit" class="btn-ajouter">Ajouter</button>
+                            </form>
+                        <?php endif; ?>
                     </div>
                 </article>
 
@@ -56,7 +83,16 @@
                     <p class="ingredients">Sauce tomate, mozzarella, fromage de chèvre, emmental, bleu.</p>
                     <div class="pied-carte">
                         <span class="prix">14.00 €</span>
-                        <button class="btn-ajouter">Ajouter au panier</button>
+                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
+                            <form action="accueil.php" method="POST" class="form-ajout-panier">
+                                <input type="hidden" name="action" value="ajouter">
+                                <input type="hidden" name="id_article" value="P08">
+                                <input type="hidden" name="nom_article" value="4 Fromages">
+                                <input type="hidden" name="prix_article" value="14.00">
+                                <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
+                                <button type="submit" class="btn-ajouter">Ajouter</button>
+                            </form>
+                        <?php endif; ?>
                     </div>
                 </article>
 
@@ -66,7 +102,16 @@
                     <p class="ingredients">Crème fraîche, mozzarella, pommes de terre, lardons, reblochon.</p>
                     <div class="pied-carte">
                         <span class="prix">14.50 €</span>
-                        <button class="btn-ajouter">Ajouter au panier</button>
+                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
+                            <form action="accueil.php" method="POST" class="form-ajout-panier">
+                                <input type="hidden" name="action" value="ajouter">
+                                <input type="hidden" name="id_article" value="P06">
+                                <input type="hidden" name="nom_article" value="Savoyarde">
+                                <input type="hidden" name="prix_article" value="14.50">
+                                <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
+                                <button type="submit" class="btn-ajouter">Ajouter</button>
+                            </form>
+                        <?php endif; ?>
                     </div>
                 </article>
 

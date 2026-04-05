@@ -8,7 +8,9 @@
             "informations": {
                 "nom": "Nadal",
                 "prenom": "Rafael",
-                "adresse": "1 rue de la Paix, 75000 Paris"
+                "telephone": "01 23 45 67 89",
+                "adresse": "1 rue de la Paix, 75000 Paris",
+                "infos_complementaires": " "
             },
             "dates": {
                 "inscription": "01\/01\/2025",
@@ -21,9 +23,11 @@
             "mot_de_passe": "Roger123",
             "role": "admin",
             "informations": {
-                "nom": "ederer",
-                "pseudo": "Roger",
-                "adresse": "2 rue de la Paix, 75000 Paris"
+                "nom": "Federer",
+                "prenom": "Roger",
+                "telephone" : "06 72 21 82 02",
+                "adresse": "2 rue de la Paix, 75000 Paris",
+                "infos_complementaires": " "
             },
             "dates": {
                 "inscription": "01\/01\/2025",
@@ -37,8 +41,10 @@
             "role": "livreur",
             "informations": {
                 "nom": "Djokovic",
-                "pseudo": "Novak",
-                "adresse": "QG Livreurs"
+                "prenom": "Novak",
+                "telephone" : "07 11 41 39 74",
+                "adresse": "QG Livreurs",
+                "infos_complementaires": " "
             },
             "dates": {
                 "inscription": "11\/04\/2025",
@@ -52,8 +58,10 @@
             "role": "client",
             "informations": {
                 "nom": "Sinner",
-                "pseudo": "Jannik",
-                "adresse": "Avenue du Parc, 95000 Cergy-Pontoise"
+                "prenom": "Jannik",
+                "telephone" : "06 83 62 25 62",
+                "adresse": "Avenue du Parc, 95000 Cergy-Pontoise",
+                "infos_complementaires": " "
             },
             "dates": {
                 "inscription": "01\/08\/2025",
@@ -67,8 +75,10 @@
             "role": "client",
             "informations": {
                 "nom": "Alcaraz",
-                "pseudo": "Carlos",
-                "adresse": "33 Boulevard du Port, 95000 Cergy-Pontoise"
+                "prenom": "Carlos",
+                "telephone" : "06 92 51 30 43",
+                "adresse": "33 Boulevard du Port, 95000 Cergy-Pontoise",
+                "infos_complementaires": " "
             },
             "dates": {
                 "inscription": "02\/02\/2025",
@@ -82,8 +92,10 @@
             "role": "client",
             "informations": {
                 "nom": "Williams",
-                "pseudo": "Serena",
-                "adresse": "5 avenue de la Gare, 95000 Cergy"
+                "prenom": "Serena",
+                "telephone" : "07 29 01 56 88",
+                "adresse": "5 avenue de la Gare, 95000 Cergy",
+                "infos_complementaires": " "
             },
             "dates": {
                 "inscription": "10\/10\/2025",
@@ -97,8 +109,10 @@
             "role": "client",
             "informations": {
                 "nom": "Terieur",
-                "pseudo": "Alex",
-                "adresse": "14 rue du mail, 95000 Cergy"
+                "prenom": "Alex",
+                "telephone" : "06 91 80 79 24",
+                "adresse": "14 rue du mail, 95000 Cergy",
+                "infos_complementaires": " "
             },
             "dates": {
                 "inscription": "11\/11\/2025",
@@ -112,12 +126,31 @@
             "role": "client",
             "informations": {
                 "nom": "Terieur",
-                "pseudo": "Alain",
-                "adresse": "14 rue du mail, 95000 Cergy"
+                "prenom": "Alain",
+                "telephone" : "07 71 90 94 61",
+                "adresse": "14 rue du mail, 95000 Cergy",
+                "infos_complementaires": " "
             },
             "dates": {
                 "inscription": "12\/11\/2025",
                 "derniere_connexion": "11\/02\/2026"
+            }
+        },
+        {
+            "id": "U009",
+            "login": "restaurateur@gmail.com",
+            "mot_de_passe": "resto123",
+            "role": "restaurateur",
+            "informations": {
+                "nom": "Restaurateur",
+                "prenom": "Le",
+                "telephone": "01 08 02 04 01",
+                "adresse": "1 rue du Faubourg St Honoré, 75000 Paris",
+                "infos_complementaires": " "
+            },
+            "dates": {
+                "inscription": "18\/04\/2025",
+                "derniere_connexion": "18\/03\/2026"
             }
         }
     ]

@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $dernier_id = $num;
                 }
             }
-            $nouvel_id = 'U' . str_pad($dernier_id + 1, 3, '0', STR_PAD_LEFT); //ajoute des 0 pour completer
+            $nouvel_id = 'U' . str_pad($dernier_id + 1, 3, '0', STR_PAD_LEFT);
 
             $nouvel_utilisateur = [
                 "id" => $nouvel_id,
@@ -48,7 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "informations" => [
                     "nom" => $nom,
                     "prenom" => $prenom,
-                    "adresse" => $adresse . ($infos ? " (Infos : " . $infos . ")" : "")
+                    "telephone" => $telephone,
+                    "adresse" => $adresse,
+                    "infos_complementaires" => $infos
                 ],
                 "dates" => [
                     "inscription" => date('d/m/Y'),

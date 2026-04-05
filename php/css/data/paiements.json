@@ -1,0 +1,34 @@
+{
+    "paiements": [
+        {
+            "id_transaction": "TRANS-882109",
+            "commande_id": "CMD-001",
+            "client_id": "U004",
+            "date_transaction": "05/04/2026 19:35",
+            "montant": 25.50,
+            "coordonnees_bancaires": {
+                "nom_porteur": "Jannik Sinner",
+                "type_carte": "Visa",
+                "derniers_chiffres": "4242",
+                "expiration": "08/28"
+            },
+            "statut": "succes",
+            "methode": "CYBank API"
+        },
+        {
+            "id_transaction": "TRANS-882110",
+            "commande_id": "CMD-002",
+            "client_id": "U005",
+            "date_transaction": "05/04/2026 20:05",
+            "montant": 14.00,
+            "coordonnees_bancaires": {
+                "nom_porteur": "Carlos Alcaraz",
+                "type_carte": "Mastercard",
+                "derniers_chiffres": "9901",
+                "expiration": "12/27"
+            },
+            "statut": "succes",
+            "methode": "CYBank API"
+        }
+    ]
+}

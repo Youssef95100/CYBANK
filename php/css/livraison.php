@@ -1,51 +1,80 @@
+<?php 
+require_once 'includes/livraison_dyn.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livraison - La Pizzardiz</title>
+    <title>Mes Livraisons - La Pizzardiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <?php include 'views/nav.php'; ?>
 
-    <main class="conteneur-livraison">
-        <h1 class="titre-livraison">Course en cours</h1>
+    <main class="conteneur-admin">
+        <h1>Livraisons en cours</h1>
 
-        <section class="carte-livraison">
-            <div class="en-tete-livraison">
-                <h2>Commande #CMD-00124</h2>
-                <span class="badge-livraison">À livrer</span>
+        <?php if (empty($mes_livraisons)): ?>
+            <section class="carte-profil pleine-largeur">
+                <p class="message-vide-livraison">
+                    Aucune livraison en cours pour le moment.
+                </p>
+            </section>
+        <?php else: ?>
+            <div class="grille-profil">
+                <?php foreach ($mes_livraisons as $cmd): ?>
+                    <section class="carte-profil">
+                        <div class="en-tete-livraison">
+                            <h2>Commande <?php echo htmlspecialchars($cmd['id']); ?></h2>
+                            <span class="badge-paiement <?php echo htmlspecialchars($cmd['statut_paiement']); ?>">
+                                <?php echo ucfirst(str_replace('_', ' ', htmlspecialchars($cmd['statut_paiement']))); ?>
+                            </span>
+                        </div>
+
+                        <ul class="liste-infos mt-15">
+                            <li>
+                                <strong>Adresse :</strong><br>
+                                <span class="texte-adresse-grand">
+                                    <?php echo htmlspecialchars($cmd['adresse_livraison'] ?? 'Adresse non renseignée'); ?>
+                                </span>
+                            </li>
+                            <li>
+                                <strong>Contenu :</strong><br>
+                                <?php 
+                                    $details = [];
+                                    foreach ($cmd['articles'] as $article) {
+                                        $details[] = $article['quantite'] . 'x ' . $article['nom'];
+                                    }
+                                    echo htmlspecialchars(implode(', ', $details));
+                                ?>
+                            </li>
+                        </ul>
+
+                        <div class="conteneur-action-maps">
+                            <a href="#" class="btn-maps pleine-largeur" title="Ouvrir dans le GPS">Ouvrir dans Maps / Waze</a>
+                        </div>
+
+                        <div class="actions-livreur-flex">
+                            <form action="#" method="POST" class="form-action-livraison">
+                                <input type="hidden" name="id_commande" value="<?php echo htmlspecialchars($cmd['id']); ?>">
+                                <input type="hidden" name="nouveau_statut" value="livree">
+                                <button type="submit" class="btn-action btn-valider pleine-largeur">Livrée</button>
+                            </form>
+
+                            <form action="#" method="POST" class="form-action-livraison">
+                                <input type="hidden" name="id_commande" value="<?php echo htmlspecialchars($cmd['id']); ?>">
+                                <input type="hidden" name="nouveau_statut" value="abandonnee">
+                                <button type="submit" class="btn-action btn-abandon pleine-largeur">Abandonnée</button>
+                            </form>
+                        </div>
+                    </section>
+                <?php endforeach; ?>
             </div>
-
-            <div class="bloc-info">
-                <h3>👤 Client : Jannik Sinner</h3>
-                <p><strong>Téléphone :</strong> 06 83 62 25 62</p>
-                <a href="tel:+33683622562" class="btn-block btn-tel">📞 Appeler le client</a>
-            </div>
-
-            <div class="bloc-info">
-                <h3>📍 Adresse de livraison</h3>
-                <p>Avenue du Parc,<br>95000 Cergy-Pontoise</p>
-                <a href="https://maps.google.com/?q=Avenue+du+Parc,+95000+Cergy-Pontoise" target="_blank" class="btn-block btn-maps">🗺️ Ouvrir dans Maps / Waze</a>
-            </div>
-
-            <div class="bloc-info encadre-acces">
-                <h3>🔑 Informations d'accès</h3>
-                <ul class="liste-acces">
-                    <li><strong>Code Interphone :</strong> 2461P</li>
-                    <li><strong>Étage :</strong> 3ème</li>
-                    <li><strong>Commentaires :</strong> L'ascenseur ne marche pas, veuillez utiliser les escaliers.</li>
-                </ul>
-            </div>
-
-            <div class="actions-livraison">
-                <button class="btn-block btn-terminer">✅ Valider la livraison</button>
-            </div>
-        </section>
-
+        <?php endif; ?>
     </main>
 
 </body>

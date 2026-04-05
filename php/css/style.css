@@ -1,4 +1,4 @@
-/* 0. CHARTE GRAPHIQUE GLOBALE (Le fond, le texte, les liens) */
+/* CHARTE GRAPHIQUE GLOBALE (Le fond, le texte, les liens) */
 body {
     background-color: #f4f4f9;
     color: #333333;
@@ -30,7 +30,6 @@ a:hover {
     text-decoration: underline;
 }
 
-
 /* index.html, presentation.html, inscription.html, connexion.html, profil.html, admin.html, commande.html, livraison.html, notation.html */
 nav ul {
     list-style-type: none;
@@ -54,7 +53,6 @@ nav a:hover {
     background-color: #34495e;
     color: #42b983;
 }
-
 
 /* index.html, presentation.html */
 .zone-recherche {
@@ -86,7 +84,6 @@ nav a:hover {
     background-color: #34495e;
 }
 
-
 /* connexion.html, inscription.html, notation.html */
 .conteneur-formulaire {
     max-width: 500px;
@@ -109,7 +106,8 @@ nav a:hover {
 }
 
 .groupe-champ input, 
-.groupe-champ textarea {
+.groupe-champ textarea,
+.groupe-champ select {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -118,7 +116,8 @@ nav a:hover {
 }
 
 .groupe-champ input:focus, 
-.groupe-champ textarea:focus {
+.groupe-champ textarea:focus,
+.groupe-champ select:focus {
     border-color: #2c3e50;
     outline: none;
 }
@@ -155,24 +154,6 @@ nav a:hover {
     text-decoration: underline;
     color: #27ae60;
 }
-
-.groupe-champ input, 
-.groupe-champ textarea,
-.groupe-champ select {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: inherit;
-}
-
-.groupe-champ input:focus, 
-.groupe-champ textarea:focus,
-.groupe-champ select:focus {
-    border-color: #2c3e50;
-    outline: none;
-}
-
 
 /* index.html, presentation.html */
 .conteneur-menu {
@@ -248,7 +229,6 @@ nav a:hover {
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-/* pour que les images soit à la même taille */
 .img-pizza {
     width: 100%; 
     height: 200px; 
@@ -306,7 +286,6 @@ nav a:hover {
     margin-top: 50px;
     margin-bottom: 30px;
 }
-
 
 /* profil.html */
 .conteneur-profil {
@@ -425,11 +404,11 @@ progress {
 
 .lien-noter:hover {
     background-color: #2980b9;
+    color: white !important;
+    text-decoration: none !important;
 }
 
-
 /* admin.html */
-
 .conteneur-admin {
     max-width: 1000px;
     margin: 40px auto;
@@ -479,8 +458,11 @@ progress {
     background-color: #9b59b6;
 }
 
-/* commande.html */
+.badge-role.admin {
+    background-color: #8e44ad;
+}
 
+/* commande.html */
 .espace-bas {
     margin-bottom: 30px;
 }
@@ -498,23 +480,26 @@ progress {
 }
 
 .btn-action {
-    background-color: #27ae60;
     color: white;
     border: none;
     padding: 8px 12px;
     border-radius: 4px;
-    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
-.btn-action:hover {
-    background-color: #2ecc71;
+.btn-action:active {
+    transform: scale(0.95); 
+}
+
+.btn-action:visited, .btn-action:hover, .btn-action:active {
+    color: white; 
+    text-decoration: none;
 }
 
 /* livraison.html */
-
-   .conteneur-livraison {
+.conteneur-livraison {
     max-width: 600px;
     margin: 40px auto;
     padding: 0 20px;
@@ -537,9 +522,8 @@ progress {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
 }
 
 .en-tete-livraison h2 {
@@ -606,11 +590,27 @@ progress {
 }
 
 .btn-maps {
-    background-color: #3498db;
-    color: white;
+    display: block;
+    text-align: center;
+    background-color: #f39c12;
+    color: white !important;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none !important;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    box-sizing: border-box;
 }
+
+.btn-maps:visited, 
+.btn-maps:active, 
 .btn-maps:hover {
-    background-color: #2980b9;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.btn-maps:hover {
+    background-color: #e67e22;
 }
 
 .btn-tel {
@@ -618,6 +618,7 @@ progress {
     color: #2c3e50;
     border: 2px solid #bdc3c7;
 }
+
 .btn-tel:hover {
     background-color: #bdc3c7;
 }
@@ -661,4 +662,241 @@ progress {
 
 .lien-connexion-succes:hover {
     color: #27ae60;
+}
+
+/* admin.php (phase 2) */
+.groupe-actions-admin {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-bloquer {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-bloquer:hover {
+    background-color: #c0392b;
+}
+
+.select-admin {
+    padding: 7px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 13px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    cursor: pointer;
+    outline: none;
+}
+
+.select-admin:hover {
+    border-color: #3498db;
+}
+
+.cellule-vide {
+    text-align: center;
+    font-style: italic;
+    color: #7f8c8d;
+    padding: 20px !important;
+}
+
+/* commande.php (phase 2) */
+.texte-adresse {
+    font-size: 13px;
+    color: #7f8c8d;
+}
+
+.badge-paiement {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+}
+
+.badge-paiement.payé {
+    background-color: #27ae60;
+}
+
+.badge-paiement.en_attente {
+    background-color: #f39c12;
+}
+
+.badge-paiement.échoué {
+    background-color: #e74c3c;
+}
+
+.btn-livraison {
+    background-color: #3498db;
+}
+
+.btn-livraison:hover {
+    background-color: #2980b9;
+}
+
+.btn-valider {
+    background-color: #27ae60;
+}
+
+.btn-valider:hover {
+    background-color: #2ecc71;
+}
+
+/* detail_commande */
+.lien-retour {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.lien-retour:hover {
+    text-decoration: none;
+    color: #2980b9;
+}
+
+.lien-retour:visited {
+    text-decoration: none;
+    color: #2980b9;
+}
+
+.sous-titre-detail {
+    margin-top: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 5px;
+}
+
+.liste-articles-detail {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.liste-articles-detail li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ecf0f1;
+}
+
+.quantite-badge {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.pleine-largeur {
+    width: 100%;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.bouton-lien {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* page livraison */
+.texte-adresse-grand {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+    display: block;
+    margin-top: 5px;
+}
+
+.btn-abandon {
+    background-color: #e74c3c !important;
+}
+
+.btn-abandon:hover {
+    background-color: #c0392b !important;
+}
+
+.message-vide-livraison {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.conteneur-action-maps {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+
+.actions-livreur-flex {
+    display: flex;
+    gap: 15px;
+    align-items: stretch;
+}
+
+.form-action-livraison {
+    flex: 1;
+    display: flex; 
+    flex-direction: column;
+    margin: 0;
+}
+
+.form-action-livraison .btn-action {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px !important;
+}
+
+/* panier.php */
+.total-panier {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.total-panier span {
+    color: #e74c3c;
+    font-size: 24px;
+}
+
+.texte-normal {
+    font-weight: normal;
+}
+
+.groupe-double {
+    display: flex;
+    gap: 15px;
+}
+
+.groupe-double .groupe-champ {
+    flex: 1;
 }

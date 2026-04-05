@@ -1,0 +1,48 @@
+{
+    "commandes": [
+        {
+            "id": "CMD-001",
+            "client_id": "U004",
+            "articles": [
+                {
+                    "type": "menu",
+                    "id": "M01",
+                    "nom": "Menu Solo",
+                    "quantite": 1
+                },
+                {
+                    "type": "plat",
+                    "id": "P01",
+                    "nom": "Pizza Margherita",
+                    "quantite": 1
+                }
+            ],
+            "mode_consommation": "livraison",
+            "moment_preparation": "immediat",
+            "adresse_livraison": "Avenue du Parc, 95000 Cergy-Pontoise",
+            "statut_paiement": "payé",
+            "statut_commande": "livree",
+            "date_heure": "05\/04\/2026 19:45",
+            "livreur-assigne": "U003"
+        },
+        {
+            "id": "CMD-002",
+            "client_id": "U005",
+            "articles": [
+                {
+                    "type": "menu",
+                    "id": "M03",
+                    "nom": "Menu Duo",
+                    "quantite": 1
+                }
+            ],
+            "mode_consommation": "sur_place",
+            "moment_preparation": "immediat",
+            "adresse_livraison": "",
+            "statut_paiement": "en_attente",
+            "statut_commande": "a_preparer",
+            "date_heure": "05\/04\/2026 20:10",
+            "livreur-assigne": ""
+        }
+    ]
+}

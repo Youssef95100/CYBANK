@@ -1,10 +1,14 @@
+<?php 
+require_once 'includes/commande_dyn.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commandes - La Pizzardir</title>
+    <title>Commandes - La Pizzardiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -21,27 +25,51 @@
                 <thead>
                     <tr>
                         <th>N° Commande</th>
-                        <th>Heure de commande</th>
+                        <th>Date & Heure</th>
                         <th>Détails de la commande</th>
-                        <th>Statut</th>
+                        <th>Lieu de Consommation</th>
+                        <th>Paiement</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>#CMD-00125</td>
-                        <td>19h30</td>
-                        <td>1x L'Extravagante, 1x Tiramisu</td>
-                        <td><span class="badge-role attente">À préparer</span></td>
-                        <td><button class="btn-action" disabled>Passer en livraison</button></td>
-                    </tr>
-                    <tr>
-                        <td>#CMD-00126</td>
-                        <td>19h35</td>
-                        <td>2x Margherita, 4x Coca-Cola</td>
-                        <td><span class="badge-role attente">À préparer</span></td>
-                        <td><button class="btn-action" disabled>Passer en livraison</button></td>
-                    </tr>
+                    <?php if (empty($commandes_a_preparer)): ?>
+                        <tr>
+                            <td colspan="6" class="cellule-vide">Aucune commande en attente. Beau travail !</td>
+                        </tr>
+                    <?php else: ?>
+                        <?php foreach ($commandes_a_preparer as $cmd): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($cmd['id']); ?></td>
+                                <td><?php echo htmlspecialchars($cmd['date_heure']); ?></td>
+                                <td>
+                                    <?php 
+                                        $details_articles = [];
+                                        foreach ($cmd['articles'] as $article) {
+                                            $details_articles[] = $article['quantite'] . 'x ' . $article['nom'];
+                                        }
+                                        echo htmlspecialchars(implode(', ', $details_articles));
+                                    ?>
+                                </td>
+                                <td>
+                                    <strong><?php echo ucfirst(str_replace('_', ' ', htmlspecialchars($cmd['mode_consommation']))); ?></strong>
+                                    <?php if ($cmd['mode_consommation'] === 'livraison' && !empty($cmd['adresse_livraison'])): ?>
+                                        <br><span class="texte-adresse"><?php echo htmlspecialchars($cmd['adresse_livraison']); ?></span>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <span class="badge-paiement <?php echo htmlspecialchars($cmd['statut_paiement']); ?>">
+                                        <?php echo ucfirst(str_replace('_', ' ', htmlspecialchars($cmd['statut_paiement']))); ?>
+                                    </span>
+                                </td>
+                                <td>
+                                    <a href="detail_commande.php?id=<?php echo urlencode($cmd['id']); ?>" class="btn-action btn-livraison bouton-lien">
+                                        Gérer la commande
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </section>
@@ -53,20 +81,36 @@
                 <thead>
                     <tr>
                         <th>N° Commande</th>
-                        <th>Heure départ</th>
-                        <th>Livreur assigné</th>
-                        <th>Statut</th>
+                        <th>Date & Heure</th>
+                        <th>Lieu de Consommation</th>
+                        <th>Paiement</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>#CMD-00124</td>
-                        <td>19h15</td>
-                        <td>Novak D.</td>
-                        <td><span class="badge-role livreur">En livraison</span></td>
-                        <td><button class="btn-action" disabled>Marquer comme Livrée</button></td>
-                    </tr>
+                    <?php if (empty($commandes_en_livraison)): ?>
+                        <tr>
+                            <td colspan="5" class="cellule-vide">Aucune livraison en cours.</td>
+                        </tr>
+                    <?php else: ?>
+                        <?php foreach ($commandes_en_livraison as $cmd): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($cmd['id']); ?></td>
+                                <td><?php echo htmlspecialchars($cmd['date_heure']); ?></td>
+                                <td><?php echo htmlspecialchars($cmd['adresse_livraison'] ?? 'Non renseignée'); ?></td>
+                                <td>
+                                    <span class="badge-paiement <?php echo htmlspecialchars($cmd['statut_paiement']); ?>">
+                                        <?php echo ucfirst(str_replace('_', ' ', htmlspecialchars($cmd['statut_paiement']))); ?>
+                                    </span>
+                                </td>
+                                <td>
+                                    <a href="detail_commande.php?id=<?php echo urlencode($cmd['id']); ?>" class="btn-action btn-livraison bouton-lien">
+                                        Gérer la commande
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </section>
