@@ -17,393 +17,45 @@ include 'includes/presentation_dyn.php';
 
     <main class="conteneur-menu">
         
-        <h1>Découvrez nos Pizzas</h1>
+        <h1>Découvrez notre Carte</h1>
 
-        <?php if (isset($message_ajout)): ?>
+        <?php if (isset($message_ajout) && $message_ajout != ''): ?>
             <div class="message-succes"><?php echo $message_ajout; ?></div>
         <?php endif; ?>
 
         <section class="barre-outils">
-            <div class="recherche-rapide">
-                <input type="search" placeholder="Rechercher une pizza...">
-                <button type="button">Rechercher</button>
+            <div class="filtres">
+                <label for="filtre-categorie">Catégorie :</label>
+                <select id="filtre-categorie" class="select-admin">
+                    <option value="">Toutes les catégories</option>
+                    <option value="Pizza">Pizzas</option>
+                    <option value="Boisson">Boissons</option>
+                    <option value="Dessert">Desserts</option>
+                </select>
             </div>
             
             <div class="filtres">
-                <select name="base">
-                    <option value="">Toutes les bases</option>
-                    <option value="tomate">Base Tomate</option>
-                    <option value="creme">Base Crème</option>
-                </select>
-
-                <select name="viande">
-                    <option value="">Toutes les viandes</option>
-                    <option value="poulet">Poulet</option>
-                    <option value="porc">Lardons / Jambon</option>
-                    <option value="boeuf">Boeuf / Merguez</option>
-                    <option value="vegetarien">Végétarien</option>
-                </select>
-
-                <select name="allergenes">
-                    <option value="">Allergènes</option>
-                    <option value="sans-gluten">Sans gluten</option>
-                    <option value="sans-lactose">Sans lactose</option>
+                <label for="tri-plats">Trier par :</label>
+                <select id="tri-plats" class="select-admin">
+                    <option value="defaut">Par défaut</option>
+                    <option value="prix_asc">Prix croissant</option>
+                    <option value="prix_desc">Prix décroissant</option>
+                    <option value="nom_asc">Nom (A-Z)</option>
                 </select>
             </div>
         </section>
 
-        <section class="grille-produits">
-            <article class="carte-pizza">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg" alt="Pizza Margherita" class="img-pizza">
-                <h3>Margherita</h3>
-                <p class="ingredients">Sauce tomate, mozzarella, basilic frais.</p>
-                <div class="pied-carte">
-                    <span class="prix">10.00 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="P01">
-                            <input type="hidden" name="nom_article" value="Margherita">
-                            <input type="hidden" name="prix_article" value="10.00">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/CHICKEN_PIZZA.jpg" alt="Pizza Boursin" class="img-pizza">
-                <h3>Boursin</h3>
-                <p class="ingredients">Fromage boursin, mozzarella, morceau de poulet, pomme de terre, oignons, origan.</p>
-                <div class="pied-carte">
-                    <span class="prix">14.00 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="P02">
-                            <input type="hidden" name="nom_article" value="Boursin">
-                            <input type="hidden" name="prix_article" value="14.00">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hawaiian_pizza_2023.jpg" alt="Pizza Hawaienne" class="img-pizza">
-                <h3>Hawaienne</h3>
-                <p class="ingredients">Crème fraîche, mozzarella, jambon, ananas.</p>
-                <div class="pied-carte">
-                    <span class="prix">14.50 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="P03">
-                            <input type="hidden" name="nom_article" value="Hawaienne">
-                            <input type="hidden" name="prix_article" value="14.50">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://www.herta.fr/sites/default/files/2022-07/pizza-che%CC%80vre-miel-%284%29.jpg" alt="Pizza Chèvre Miel" class="img-pizza">
-                <h3>Chèvre Miel</h3>
-                <p class="ingredients">Crème fraîche, poulet fumé, mozzarella, fromage de chèvre, miel.</p>
-                <div class="pied-carte">
-                    <span class="prix">15.00 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="P04">
-                            <input type="hidden" name="nom_article" value="Chèvre Miel">
-                            <input type="hidden" name="prix_article" value="15.00">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Spicy_Chicken_Pizza.jpg" alt="Pizza L'Orientale" class="img-pizza">
-                <h3>L'Orientale</h3>
-                <p class="ingredients">Sauce tomate, mozzarella, poivrons, oignons, merguez.</p>
-                <div class="pied-carte">
-                    <span class="prix">13.50 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="P05">
-                            <input type="hidden" name="nom_article" value="L'Orientale">
-                            <input type="hidden" name="prix_article" value="13.50">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://img.cuisineaz.com/800x450/2013/12/20/i92032-pizza-savoyarde.jpeg" alt="Pizza Savoyarde" class="img-pizza">
-                <h3>Savoyarde</h3>
-                <p class="ingredients">Crème fraîche, mozzarella, pommes de terre, lardons, reblochon.</p>
-                <div class="pied-carte">
-                    <span class="prix">14.50 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="P06">
-                            <input type="hidden" name="nom_article" value="Savoyarde">
-                            <input type="hidden" name="prix_article" value="14.50">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Butcher_(All_Meat)_pizza_-_27282456634.jpg" alt="Pizza L'Extravagante" class="img-pizza">
-                <h3>L'Extravagante</h3>
-                <p class="ingredients">Sauce tomate, mozzarella, poulet fumé, champignons, oignons, poivrons, boeuf, olives noires.</p>
-                <div class="pied-carte">
-                    <span class="prix">16.00 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="P07">
-                            <input type="hidden" name="nom_article" value="L'Extravagante">
-                            <input type="hidden" name="prix_article" value="16.00">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Four_Cheese_-_Pizza_500_2023-11-10.jpg" alt="Pizza 4 Fromages" class="img-pizza">
-                <h3>4 Fromages</h3>
-                <p class="ingredients">Sauce tomate, mozzarella, fromage de chèvre, emmental, bleu.</p>
-                <div class="pied-carte">
-                    <span class="prix">14.00 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="P08">
-                            <input type="hidden" name="nom_article" value="4 Fromages">
-                            <input type="hidden" name="prix_article" value="14.00">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://lelocalapizzas.fr/wp-content/uploads/2023/03/recette-pizza-jambon-fromage.jpg" alt="Pizza 4 Jambons" class="img-pizza">
-                <h3>4 Jambons</h3>
-                <p class="ingredients">Sauce tomate, double mozzarella, jambon, bacon, chorizo, lardons.</p>
-                <div class="pied-carte">
-                    <span class="prix">15.50 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="P09">
-                            <input type="hidden" name="nom_article" value="4 Jambons">
-                            <input type="hidden" name="prix_article" value="15.50">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-        </section>
-
-        <h1 class="titre-section">Boissons & Cocktails</h1>
-        <section class="grille-produits">
-            <article class="carte-pizza">
-                <img src="https://monin.fr/cdn/shop/files/Diabolo-Grenadine-Monin-France-70789849645391.jpeg?v=1761585402&width=1024" alt="Sirops et Diabolos" class="img-pizza">
-                <h3>Sirops & Diabolos</h3>
-                <p class="ingredients">Menthe, Grenadine, Fraise, Pêche, Citron</p>
-                <div class="pied-carte">
-                    <span class="prix">1.50 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="B01">
-                            <input type="hidden" name="nom_article" value="Sirops & Diabolos">
-                            <input type="hidden" name="prix_article" value="1.50">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://doucefrugalite.com/wp-content/uploads/2020/06/les-sodas.jpg" alt="Sodas" class="img-pizza">
-                <h3>Sodas</h3>
-                <p class="ingredients">Coca-Cola, Ice Tea, Orangina, Oasis, Sprite, Fanta</p>
-                <div class="pied-carte">
-                    <span class="prix">2.00 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="B02">
-                            <input type="hidden" name="nom_article" value="Sodas">
-                            <input type="hidden" name="prix_article" value="2.00">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://media.ccmbg.com/tc/9316324286/881068" alt="Virgin Mojito" class="img-pizza">
-                <h3>Virgin Mojito (Mocktail)</h3>
-                <p class="ingredients">Citron vert, menthe fraîche, sucre de canne, eau gazeuse.</p>
-                <div class="pied-carte">
-                    <span class="prix">5.00 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="B03">
-                            <input type="hidden" name="nom_article" value="Virgin Mojito">
-                            <input type="hidden" name="prix_article" value="5.00">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://www.cocktail.fr/wp-content/uploads/2017/05/bora-bora-1024x655.jpg.webp" alt="Bora Bora" class="img-pizza">
-                <h3>Bora Bora (Mocktail)</h3>
-                <p class="ingredients">Jus d'ananas, jus de fruit de la passion, grenadine, citron.</p>
-                <div class="pied-carte">
-                    <span class="prix">5.50 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="B04">
-                            <input type="hidden" name="nom_article" value="Bora Bora">
-                            <input type="hidden" name="prix_article" value="5.50">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://i0.wp.com/cuisinovores.com/wp-content/uploads/2025/04/photo_cocktail_mojito_cuisinovores.webp?fit=500%2C500&ssl=1" alt="Mojito Classique" class="img-pizza">
-                <h3>Mojito Classique</h3>
-                <p class="ingredients">Rhum blanc, citron vert, menthe fraîche, sucre de canne, eau gazeuse.</p>
-                <div class="pied-carte">
-                    <span class="prix">6.50 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="B05">
-                            <input type="hidden" name="nom_article" value="Mojito Classique">
-                            <input type="hidden" name="prix_article" value="6.50">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://www.laboutiqueducocktail.com/wp-content/uploads/2023/07/aperol-spritz-cocktail.jpg" alt="Spritz Italien" class="img-pizza">
-                <h3>Spritz Italien</h3>
-                <p class="ingredients">Aperol, Prosecco, eau gazeuse, rondelle d'orange.</p>
-                <div class="pied-carte">
-                    <span class="prix">6.50 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="B06">
-                            <input type="hidden" name="nom_article" value="Spritz Italien">
-                            <input type="hidden" name="prix_article" value="6.50">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-        </section>
-
-        <h1 class="titre-section">Nos Desserts</h1>
-        <section class="grille-produits">
-            <article class="carte-pizza">
-                <img src="https://images.ctfassets.net/1p5r6txvlxu4/1fixE1EZE9rtTHR8h4zjad/19c20cff2edbe3c729c863197147092a/Galbani_Veritable_Tiramisu_opt2.jpg?w=768&h=541&fm=webp&q=100&fit=fill&f=center" alt="Tiramisu Maison" class="img-pizza">
-                <h3>Tiramisu Maison</h3>
-                <p class="ingredients">Crème mascarpone, biscuits cuillère, café expresso.</p>
-                <div class="pied-carte">
-                    <span class="prix">5.00 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="D01">
-                            <input type="hidden" name="nom_article" value="Tiramisu Maison">
-                            <input type="hidden" name="prix_article" value="5.00">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/EAD7A075-44A1-4530-8D3A-CF3DB64450D4/Derivates/10F63431-377A-4844-8ECA-F34FE65D344F.jpg" alt="Panna Cotta" class="img-pizza">
-                <h3>Panna Cotta</h3>
-                <p class="ingredients">Crème vanillée et son coulis (Fruits rouges ou Caramel au beurre salé).</p>
-                <div class="pied-carte">
-                    <span class="prix">5.00 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="D02">
-                            <input type="hidden" name="nom_article" value="Panna Cotta">
-                            <input type="hidden" name="prix_article" value="5.00">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
-
-            <article class="carte-pizza">
-                <img src="https://missiapizza.fr/wp-content/uploads/2023/11/me-140.jpg" alt="Pizza Nutella" class="img-pizza">
-                <h3>Pizza Nutella</h3>
-                <p class="ingredients">Pâte à pizza fine, nutella, éclats de noisettes et sucre glace.</p>
-                <div class="pied-carte">
-                    <span class="prix">6.50 €</span>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'client'): ?>
-                        <form action="presentation.php" method="POST" class="form-ajout-panier">
-                            <input type="hidden" name="action" value="ajouter">
-                            <input type="hidden" name="id_article" value="D03">
-                            <input type="hidden" name="nom_article" value="Pizza Nutella">
-                            <input type="hidden" name="prix_article" value="6.50">
-                            <input type="number" name="quantite" value="1" min="1" max="10" class="input-quantite">
-                            <button type="submit" class="btn-ajouter">Ajouter</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            </article>
+        <section class="section-accueil">
+            <div id="grille-produits" class="grille-produits">
+            </div>
         </section>
 
     </main>
 
+    <script>
+        const estClient = <?php echo (isset($_SESSION['role']) && $_SESSION['role'] === 'client') ? 'true' : 'false'; ?>;
+    </script>
+    <script src="presentation.js"></script>
 </body>
 
 </html>

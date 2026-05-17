@@ -40,9 +40,29 @@
             "moment_preparation": "immediat",
             "adresse_livraison": "",
             "statut_paiement": "en_attente",
-            "statut_commande": "a_preparer",
+            "statut_commande": "en_livraison",
             "date_heure": "05\/04\/2026 20:10",
             "livreur-assigne": ""
+        },
+        {
+            "id": "CMD-003",
+            "client_id": "U008",
+            "articles": [
+                {
+                    "id": "P01",
+                    "nom": "Margherita",
+                    "prix": 10,
+                    "quantite": 1
+                }
+            ],
+            "mode_consommation": "livraison",
+            "moment_preparation": "immediat",
+            "date_heure_prevue": "17\/05\/2026 20:19",
+            "adresse_livraison": "14 rue du mail, 95000 Cergy",
+            "statut_paiement": "payé",
+            "statut_commande": "prete",
+            "date_heure_achat": "17\/05\/2026 20:19",
+            "livreur_assigne": ""
         }
     ]
 }

@@ -900,3 +900,110 @@ progress {
 .groupe-double .groupe-champ {
     flex: 1;
 }
+
+.erreur-invisible {
+    display: none;
+}
+
+.bloc-mot-de-passe {
+    display: flex;
+    gap: 5px;
+}
+
+.bloc-mot-de-passe input {
+    flex-grow: 1;
+}
+
+.toggle-mdp {
+    cursor: pointer;
+    padding: 0 10px;
+    background: #ecf0f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.texte-compteur {
+    color: #7f8c8d;
+    margin-top: 5px;
+    display: block;
+}
+
+.texte-compteur.droite {
+    text-align: right;
+}
+
+.btn-theme {
+    margin-top: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-modifier {
+    cursor: pointer;
+    padding: 0 10px;
+    background: #ecf0f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-left: 10px;
+}
+
+.input-edition-profil {
+    padding: 5px;
+    width: 60%;
+}
+
+.cellule-vide {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.form-ajout-panier {
+    margin: 0;
+    display: inline-block;
+}
+
+.input-quantite {
+    width: 50px;
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-bloquer {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-debloquer {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.actions-admin {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

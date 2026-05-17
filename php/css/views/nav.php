@@ -2,6 +2,20 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
+if (isset($_SESSION['connecte']) && $_SESSION['connecte'] === true) {
+    $fichier_json = 'data/utilisateurs.json';
+    if (file_exists($fichier_json)) {
+        $donnees = json_decode(file_get_contents($fichier_json), true);
+        foreach ($donnees['utilisateurs'] as $u) {
+            if ($u['id'] === $_SESSION['id'] && isset($u['bloque']) && $u['bloque'] === true) {
+                session_destroy();
+                header("Location: connexion.php");
+                exit();
+            }
+        }
+    }
+}
 ?>
 <nav>
     <ul>
@@ -11,7 +25,6 @@ if (session_status() === PHP_SESSION_NONE) {
         <?php if (!isset($_SESSION['connecte']) || $_SESSION['connecte'] !== true): ?>
             <li><a href="inscription.php">Inscription</a></li>
             <li><a href="connexion.php">Connexion</a></li>
-
         <?php else: ?>
             <li><a href="profil.php">Profil</a></li>
 
@@ -37,5 +50,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
             <li><a href="includes/logout.php">Déconnexion</a></li>
         <?php endif; ?>
+        
+        <li><button id="theme-toggle" class="btn-theme">Thème</button></li>
     </ul>
 </nav>
+
+<script src="theme.js"></script>

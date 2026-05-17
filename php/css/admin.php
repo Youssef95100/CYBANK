@@ -1,17 +1,22 @@
 <?php
 include 'includes/admin_dyn.php';
+
+$fichier_users = 'data/utilisateurs.json';
+$liste_utilisateurs = [];
+if (file_exists($fichier_users)) {
+    $donnees = json_decode(file_get_contents($fichier_users), true);
+    $liste_utilisateurs = $donnees['utilisateurs'];
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration - La Pizzardiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <?php include 'views/nav.php'; ?>
 
@@ -44,61 +49,39 @@ include 'includes/admin_dyn.php';
                         <th>Nom</th>
                         <th>Email</th>
                         <th>Rôle</th>
-                        <th>Action & Gestion</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php if (empty($liste_utilisateurs)): ?>
+                    <?php foreach ($liste_utilisateurs as $user): ?>
                         <tr>
-                            <td colspan="5" class="cellule-vide">Aucun utilisateur trouvé.</td>
+                            <td><?php echo htmlspecialchars($user['id']); ?></td>
+                            <td><?php echo htmlspecialchars($user['informations']['prenom'] . ' ' . $user['informations']['nom']); ?></td>
+                            <td><?php echo htmlspecialchars($user['login']); ?></td>
+                            <td><?php echo ucfirst(htmlspecialchars($user['role'])); ?></td>
+                            <td>
+                                <div class="actions-admin">
+                                    <a href="profil.php?id=<?php echo $user['id']; ?>" class="lien-noter bouton-lien">Profil</a>
+                                    
+                                    <?php if ($user['id'] !== $_SESSION['id']): ?>
+                                        <?php 
+                                        $estBloque = isset($user['bloque']) && $user['bloque'] === true; 
+                                        $texteBouton = $estBloque ? 'Débloquer' : 'Bloquer';
+                                        $classeBouton = $estBloque ? 'btn-debloquer' : 'btn-bloquer';
+                                        ?>
+                                        <button class="btn-action-blocage <?php echo $classeBouton; ?>" data-id="<?php echo $user['id']; ?>">
+                                            <?php echo $texteBouton; ?>
+                                        </button>
+                                    <?php endif; ?>
+                                </div>
+                            </td>
                         </tr>
-                    <?php else: ?>
-                        <?php foreach ($liste_utilisateurs as $user): ?>
-                            <tr>
-                                <td><?php echo htmlspecialchars($user['id']); ?></td>
-                                <td>
-                                    <?php 
-                                        $prenom = $user['informations']['prenom'] ?? '';
-                                        $nom = $user['informations']['nom'] ?? '';
-                                        echo htmlspecialchars(trim($prenom . ' ' . $nom)); 
-                                    ?>
-                                </td>
-                                <td><?php echo htmlspecialchars($user['login']); ?></td>
-                                <td>
-                                    <span class="badge-role <?php echo htmlspecialchars($user['role']); ?>">
- Í                                       <?php echo ucfirst(htmlspecialchars($user['role'])); ?>
-                                    </span>
-                                </td>
-                                <td>
-                                    <div class="groupe-actions-admin">
-                                        <a href="profil.php?id=<?php echo $user['id']; ?>" class="lien-noter">Profil</a>
-                                        
-                                        <button class="btn-bloquer" title="Bloquer le compte">Bloquer</button>
-                                        
-                                        <select class="select-admin" title="Modifier le statut">
-                                            <option value="standard">Statut : Standard</option>
-                                            <option value="premium">Statut : Premium</option>
-                                            <option value="vip">Statut : VIP</option>
-                                        </select>
-
-                                        <select class="select-admin" title="Niveau de remise">
-                                            <option value="0">Remise : 0%</option>
-                                            <option value="5">Remise : 5%</option>
-                                            <option value="10">Remise : 10%</option>
-                                            <option value="15">Remise : 15%</option>
-                                        </select>
-                                    </div>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-
-                    
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </section>
     </main>
 
+    <script src="admin.js"></script>
 </body>
-
 </html>

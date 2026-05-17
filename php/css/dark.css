@@ -1,0 +1,54 @@
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+h1, h2, h3, .prix, .points {
+    color: #f39c12;
+}
+
+p, .ingredients, .texte-adresse {
+    color: #b3b3b3;
+}
+
+.carte-pizza, .carte-profil, .conteneur-formulaire, .barre-outils, .encadre-acces {
+    background-color: #2c3e50;
+    color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+.table-commandes th, .table-admin th {
+    background-color: #f39c12;
+    color: #1a1a1a;
+}
+
+.table-commandes td, .table-admin td {
+    border-bottom: 1px solid #444;
+}
+
+.groupe-champ label {
+    color: #f39c12;
+}
+
+input, textarea, select {
+    background-color: #34495e;
+    color: #ffffff;
+    border: 1px solid #7f8c8d;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #f39c12;
+}
+
+.btn-valider, .zone-recherche button {
+    background-color: #f39c12;
+    color: #1a1a1a;
+}
+
+.btn-valider:hover, .zone-recherche button:hover {
+    background-color: #e67e22;
+}
+
+.lien-inscription a {
+    color: #f39c12;
+}

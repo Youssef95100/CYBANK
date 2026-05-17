@@ -18,42 +18,35 @@ require_once 'includes/profil_dyn.php';
     <main class="conteneur-profil">
         <h1>Mon Tableau de Bord</h1>
 
+        <div id="message-retour" class="erreur-invisible"></div>
+
         <div class="grille-profil">
 
             <section class="carte-profil">
                 <h2>Mes Informations</h2>
-                <ul class="liste-infos">
+                <ul class="liste-infos" id="liste-informations">
                     <li>
-                        <span><strong>Nom :</strong>
-                            <?php echo htmlspecialchars($infos_user['informations']['prenom'] . ' ' . $infos_user['informations']['nom'] ?? ''); ?>
-                        </span>
-                        <button class="btn-modifier" title="Modifier cette information">✏️</button>
+                        <span><strong>Prénom :</strong> <span class="info-valeur" data-champ="prenom"><?php echo htmlspecialchars($infos_user['informations']['prenom'] ?? ''); ?></span></span>
+                        <button type="button" class="btn-modifier">Modifier</button>
                     </li>
                     <li>
-                        <span><strong>Email :</strong>
-                            <?php echo htmlspecialchars($infos_user['login'] ?? ''); ?>
-                        </span>
-                        <button class="btn-modifier" title="Modifier cette information">✏️</button>
+                        <span><strong>Nom :</strong> <span class="info-valeur" data-champ="nom"><?php echo htmlspecialchars($infos_user['informations']['nom'] ?? ''); ?></span></span>
+                        <button type="button" class="btn-modifier">Modifier</button>
                     </li>
                     <li>
-                        <span><strong>Téléphone :</strong>
-                            <?php echo htmlspecialchars($infos_user['informations']['telephone'] ?? ''); ?>
-                        </span>
-                        <button class="btn-modifier" title="Modifier cette information">✏️</button>
+                        <span><strong>Téléphone :</strong> <span class="info-valeur" data-champ="telephone"><?php echo htmlspecialchars($infos_user['informations']['telephone'] ?? ''); ?></span></span>
+                        <button type="button" class="btn-modifier">Modifier</button>
                     </li>
                     <li>
-                        <span><strong>Adresse :</strong>
-                            <?php echo htmlspecialchars($infos_user['informations']['adresse'] ?? ''); ?>
-                        </span>
-                        <button class="btn-modifier" title="Modifier cette information">✏️</button>
+                        <span><strong>Adresse :</strong> <span class="info-valeur" data-champ="adresse"><?php echo htmlspecialchars($infos_user['informations']['adresse'] ?? ''); ?></span></span>
+                        <button type="button" class="btn-modifier">Modifier</button>
                     </li>
                     <li>
-                        <span><strong>Informations Complémentaires :</strong>
-                            <?php echo htmlspecialchars($infos_user['informations']['infos_complementaires'] ?? 'Aucune informations supplémentaire'); ?>
-                        </span>
-                        <button class="btn-modifier" title="Modifier cette information">✏️</button>
+                        <span><strong>Infos Complémentaires :</strong> <span class="info-valeur" data-champ="infos_complementaires"><?php echo htmlspecialchars($infos_user['informations']['infos_complementaires'] ?? ''); ?></span></span>
+                        <button type="button" class="btn-modifier">Modifier</button>
                     </li>
                 </ul>
+                <button id="btn-sauvegarder" class="btn-valider erreur-invisible mt-15">Enregistrer les modifications</button>
             </section>
 
             <section class="carte-profil">
@@ -124,6 +117,7 @@ require_once 'includes/profil_dyn.php';
 
     </main>
 
+    <script src="profil.js"></script>
 </body>
 
 </html>
