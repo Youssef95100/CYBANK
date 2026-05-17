@@ -18,16 +18,18 @@ require_once 'includes/livraison_dyn.php';
     <main class="conteneur-admin">
         <h1>Livraisons en cours</h1>
 
+        <div id="message-retour-livraison" class="erreur-invisible"></div>
+
         <?php if (empty($mes_livraisons)): ?>
-            <section class="carte-profil pleine-largeur">
+            <section class="carte-profil pleine-largeur" id="bloc-livraison-vide">
                 <p class="message-vide-livraison">
                     Aucune livraison en cours pour le moment.
                 </p>
             </section>
         <?php else: ?>
-            <div class="grille-profil">
+            <div class="grille-profil" id="conteneur-grille-livraison">
                 <?php foreach ($mes_livraisons as $cmd): ?>
-                    <section class="carte-profil">
+                    <section class="carte-profil" id="carte-<?php echo htmlspecialchars($cmd['id']); ?>">
                         <div class="en-tete-livraison">
                             <h2>Commande <?php echo htmlspecialchars($cmd['id']); ?></h2>
                             <span class="badge-paiement <?php echo htmlspecialchars($cmd['statut_paiement']); ?>">
@@ -55,21 +57,16 @@ require_once 'includes/livraison_dyn.php';
                         </ul>
 
                         <div class="conteneur-action-maps">
-                            <a href="#" class="btn-maps pleine-largeur" title="Ouvrir dans le GPS">Ouvrir dans Maps / Waze</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=<?php echo urlencode($cmd['adresse_livraison']); ?>" target="_blank" class="btn-maps pleine-largeur" title="Ouvrir dans le GPS">Ouvrir dans Maps / Waze</a>
                         </div>
 
                         <div class="actions-livreur-flex">
-                            <form action="#" method="POST" class="form-action-livraison">
-                                <input type="hidden" name="id_commande" value="<?php echo htmlspecialchars($cmd['id']); ?>">
-                                <input type="hidden" name="nouveau_statut" value="livree">
-                                <button type="submit" class="btn-action btn-valider pleine-largeur">Livrée</button>
-                            </form>
-
-                            <form action="#" method="POST" class="form-action-livraison">
-                                <input type="hidden" name="id_commande" value="<?php echo htmlspecialchars($cmd['id']); ?>">
-                                <input type="hidden" name="nouveau_statut" value="abandonnee">
-                                <button type="submit" class="btn-action btn-abandon pleine-largeur">Abandonnée</button>
-                            </form>
+                            <button class="btn-action btn-valider pleine-largeur btn-statut-livraison" data-id="<?php echo htmlspecialchars($cmd['id']); ?>" data-statut="livree">
+                                Livrée
+                            </button>
+                            <button class="btn-action btn-abandon pleine-largeur btn-statut-livraison" data-id="<?php echo htmlspecialchars($cmd['id']); ?>" data-statut="abandonnee">
+                                Abandonnée
+                            </button>
                         </div>
                     </section>
                 <?php endforeach; ?>
@@ -77,6 +74,6 @@ require_once 'includes/livraison_dyn.php';
         <?php endif; ?>
     </main>
 
+    <script src="livraison.js"></script>
 </body>
-
 </html>

@@ -76,13 +76,13 @@ require_once 'includes/profil_dyn.php';
                 <tbody>
                     <?php if (empty($mes_commandes)): ?>
                     <tr>
-                        <td colspan="5" style="text-align:center;">Aucune commande passée pour le moment.</td>
+                        <td colspan="5" class="cellule-vide">Aucune commande passée pour le moment.</td>
                     </tr>
                     <?php else: ?>
                     <?php foreach ($mes_commandes as $cmd): ?>
                     <tr>
                         <td>
-                            <?php echo htmlspecialchars($cmd['date_heure']); ?>
+                            <?php echo htmlspecialchars($cmd['date_heure_prevue'] ?? $cmd['date_heure'] ?? ''); ?>
                         </td>
                         <td>
                             <?php echo htmlspecialchars($cmd['id']); ?>
@@ -103,9 +103,15 @@ require_once 'includes/profil_dyn.php';
                         </td>
                         <td>
                             <?php if ($cmd['statut_commande'] === 'livree'): ?>
-                                <a href="notation.php?id=<?php echo urlencode($cmd['id']); ?>" class="lien-noter">Noter</a>
+                                <?php if (isset($cmd['evaluation'])): ?>
+                                    <span class="badge-paiement payé">✔ Déjà notée</span>
+                                <?php else: ?>
+                                    <a href="notation.php?id=<?php echo urlencode($cmd['id']); ?>" class="lien-noter">Noter</a>
+                                <?php endif; ?>
+                            <?php elseif (in_array(strtolower($cmd['statut_commande']), ['payé', 'paye', 'a_preparer', 'planifie'])): ?>
+                                <a href="modifier_commande.php?id=<?php echo urlencode($cmd['id']); ?>" class="btn-action bouton-lien btn-modifier-commande">Modifier</a>
                             <?php else: ?>
-                                <span class="texte-adresse">Bientôt disponible...</span>
+                                <span class="texte-adresse">En cours de préparation...</span>
                             <?php endif; ?>
                         </td>
                     </tr>

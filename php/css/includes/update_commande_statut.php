@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: application/json');
 
-if (!isset($_SESSION['connecte']) || !in_array($_SESSION['role'], ['admin', 'restaurateur'])) {
+if (!isset($_SESSION['connecte']) || !in_array($_SESSION['role'], ['admin', 'restaurateur', 'livreur'])) {
     echo json_encode(['success' => false, 'message' => 'Accès non autorisé']);
     exit();
 }
@@ -17,6 +17,11 @@ if (!isset($data['id_commande']) || !isset($data['statut'])) {
 $id_commande = $data['id_commande'];
 $nouveau_statut = $data['statut'];
 $nouveau_livreur = isset($data['livreur']) ? $data['livreur'] : '';
+
+if ($_SESSION['role'] === 'livreur' && !in_array($nouveau_statut, ['livree', 'abandonnee'])) {
+    echo json_encode(['success' => false, 'message' => 'Action interdite pour votre rôle.']);
+    exit();
+}
 
 $fichier_commandes = '../data/commandes.json';
 

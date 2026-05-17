@@ -1007,3 +1007,91 @@ progress {
     gap: 10px;
     align-items: center;
 }
+
+.btn-modifier-commande {
+    background-color: #f39c12;
+}
+
+.btn-modifier-commande:hover {
+    background-color: #e67e22;
+}
+
+.btn-qte {
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.btn-qte:hover {
+    background-color: #34495e;
+}
+
+.btn-suppr {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-suppr:hover {
+    background-color: #c0392b;
+}
+
+.indicateur-finance {
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    border: 1px solid transparent;
+}
+
+.finance-neutre {
+    background-color: #eaeded;
+    color: #2c3e50;
+    border-color: #bdc3c7;
+}
+
+.finance-supplement {
+    background-color: #fdead1;
+    color: #d35400;
+    border-color: #f5b041;
+}
+
+.finance-remboursement {
+    background-color: #d5f5e3;
+    color: #27ae60;
+    border-color: #2ecc71;
+}
+
+.lien-connexion-succes, 
+.lien-connexion-succes:visited {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.lien-connexion-succes:hover {
+    background-color: #e67e22;
+    text-decoration: none !important;
+    transform: translateY(-1px);
+}
+
+.lien-connexion-succes:active {
+    transform: translateY(1px);
+}

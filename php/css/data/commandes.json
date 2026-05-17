@@ -23,7 +23,7 @@
             "statut_paiement": "payé",
             "statut_commande": "livree",
             "date_heure": "05\/04\/2026 19:45",
-            "livreur-assigne": "U003"
+            "livreur_assigne": "U003"
         },
         {
             "id": "CMD-002",
@@ -42,7 +42,7 @@
             "statut_paiement": "en_attente",
             "statut_commande": "en_livraison",
             "date_heure": "05\/04\/2026 20:10",
-            "livreur-assigne": ""
+            "livreur_assigne": ""
         },
         {
             "id": "CMD-003",

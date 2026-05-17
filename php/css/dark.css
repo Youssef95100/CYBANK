@@ -52,3 +52,16 @@ input:focus, textarea:focus, select:focus {
 .lien-inscription a {
     color: #f39c12;
 }
+
+.en-tete-livraison h2 {
+    color: #f39c12 !important;
+}
+
+.texte-adresse-grand {
+    color: #ffffff !important;
+}
+
+.lien-connexion-succes, 
+.lien-connexion-succes:visited {
+    color: #1a1a1a !important;
+}
